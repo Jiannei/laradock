@@ -669,6 +669,17 @@ RUN if [ ${INSTALL_INTL} = true ]; then \
 ;fi
 
 ###########################################################################
+# sockets: https://github.com/laradock/laradock/issues/1235
+###########################################################################
+
+ARG INSTALL_SOCKET=false
+
+RUN if [ ${INSTALL_SOCKET} = true ]; then \
+  # Install the sockets extension
+  docker-php-ext-install sockets \
+;fi
+
+###########################################################################
 # GHOSTSCRIPT:
 ###########################################################################
 
